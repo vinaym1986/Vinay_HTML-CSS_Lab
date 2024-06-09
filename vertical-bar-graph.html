@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Bar Graph</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bar-graph-background {
+    text-align: center;
+	background-color:lightgrey;
+	padding:20px;
+  }
+
+  .bar-graph-container {
+    display: inline-block;
+    margin: 20px;
+  }
+
+  .bar-graph {
+    width: 30px;
+    height: 300px;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    animation: moveUp 2s ease-in-out forwards;
+  }
+
+  @keyframes moveUp {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: var(--percentage);
+    }
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="bar-graph-background">
+  <div class="bar-graph-container">
+    <div class="bar-graph" data-percentage="30">
+      <div class="bar" style="--percentage: 30%;"></div> 
+    </div>
+	 <br />
+      30%
+  </div>
+  <div class="bar-graph-container">
+    <div class="bar-graph" data-percentage="40">
+      <div class="bar" style="--percentage: 40%;"></div> 
+    </div>
+	 <br />
+      40%
+  </div>
+  <div class="bar-graph-container">
+    <div class="bar-graph" data-percentage="80">
+      <div class="bar" style="--percentage: 80%;"></div>
+    </div>
+	 <br />
+      80%
+  </div>  
+   <div class="title">Bar Plot</div>
+</div>
+</body>
+</html>
